@@ -32,6 +32,6 @@
       <appender-ref ref="async" />
     </root>
 
-    <logger name="com.datastax.oss.driver" level= "DEBUG"/>
+    <logger name="com.datastax.oss.driver" level= "WARN"/>
     
 </configuration>

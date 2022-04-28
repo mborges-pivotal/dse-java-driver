@@ -16,15 +16,29 @@
 	<description>Java Driver Workshop exercise</description>
 	<properties>
 		<java.version>1.8</java.version>
-		<driver.version>4.13.0</driver.version>
+		<driver.oss.version>4.13.0</driver.oss.version>
+		<driver.dse.version>1.8.1</driver.dse.version>
 	</properties>
 	<dependencies>
-
 
 		<dependency>
 			<groupId>com.datastax.oss</groupId>
 			<artifactId>java-driver-core</artifactId>
-			<version>${driver.version}</version>
+			<version>${driver.oss.version}</version>
+		</dependency>
+
+		<!-- https://docs.datastax.com/en/developer/java-driver-dse/1.8/manual/ -->
+		<!-- https://docs.datastax.com/en/developer/java-driver-dse/1.8/manual/metrics/ -->
+		<dependency>
+			<groupId>com.datastax.dse</groupId>
+			<artifactId>dse-java-driver-core</artifactId>
+			<version>${driver.dse.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>io.dropwizard.metrics</groupId>
+					<artifactId>metrics-core</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
